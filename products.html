@@ -14,11 +14,21 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
+
+        <!-- alert box  -->
+        <div id="customAlert" class="alert-box">
+  <span id="alertMessage">นี่คือข้อความแจ้งเตือน</span>
+  <button onclick="closeAlert()" class="close-btn">&times;</button>
+</div>
+
+         <!-- alert box  -->
+        
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
                 <span class="site-heading-upper text-primary mb-3">ต่อเติม รีโนเวท บิ้วอิน พิมลาย วางแผนสร้างบ้าน ทำบ้าน ติดต่อเรา</span>
                 <span class="site-heading-lower">FFC <u>DESIGN</u></span>
             </h1>
+
         </header>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
@@ -47,7 +57,21 @@
                             </h2>
                         </div>
                     </div>
-                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/ฝ้าๅ.jpg" alt="..." />
+
+                 <!-- slider ภาพ -->
+                    <div class="slider-container-new">
+                         <div class="slider-new" id="sliderNew">
+                             <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/ฝ้าๅ.jpg"  onclick="openFullscreen(this) " alt="..." />
+                             <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/ฝ้า2.jpg"  onclick="openFullscreen(this) ">
+                              <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/ฝ้า3.jpg"  onclick="openFullscreen(this) ">
+                        
+                        </div>
+                <button class="btn-new prev" onclick="moveSlide(-1, 'sliderNew', 'index1')">❮</button>
+                <button class="btn-new next" onclick="moveSlide(1, 'sliderNew', 'index1')">❯</button>
+                    </div>
+
+                          <!-- Slider 1 -->
+                   
                     <div class="product-item-description d-flex me-auto">
                         <div class="bg-faded p-5 rounded"><p class="mb-0"> งานติดตั้งฝ้าเพดาน พร้อมบริการบิ้วอินภายในพื้นที่
 📌 พิกัด: ต.บ้านป่า อ.แก่งคอย จ.สระบุรี
@@ -72,7 +96,24 @@
                             </h2>
                         </div>
                     </div>
-                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/เฟอร์นิเจขอ.jpg" alt="..." />
+
+
+                    <!-- slider 2 -->
+                     <div class="slider-container-new">
+                         <div class="slider-new" id="slidernew2">
+
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/เฟอร์นิเจขอ.jpg" onclick="openFullscreen(this) " alt="..." />
+                                <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/fer2.jpg" onclick="openFullscreen(this) ">
+                              <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/fer3.jpg" onclick="openFullscreen(this) ">
+                     
+                        </div>
+                           <button class="btn-new prev" onclick="moveSlide(-1, 'slidernew2', 'index2')">❮</button>
+                            <button class="btn-new next" onclick="moveSlide(1, 'slidernew2', 'index2')">❯</button>
+
+                    </div>
+                    <!-- slider 2 -->
+
+
                     <div class="product-item-description d-flex ms-auto">
                         <div class="bg-faded p-5 rounded"><p class="mb-0">📌 งานบิ้วอินออกแบบเฉพาะตามพื้นที่จริง เพื่อการใช้งานที่คุ้มค่าและสวยงาม
 ทางทีม FFC Design จัดเต็มด้วยวัสดุคุณภาพ พร้อมทีมช่างมากประสบการณ์ ดูแลงานทุกขั้นตอน ใส่ใจรายละเอียดทุกจุด
@@ -98,7 +139,36 @@
                             </h2>
                         </div>
                     </div>
-                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/บ้าน 1.jpg" alt="..." />
+
+                      <!-- slider 3 -->
+                     <div class="slider-container-new">
+                         <div class="slider-new" id="slidernew3">
+
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/บ้าน 1.jpg" onclick="openFullscreen(this)" alt="..." />
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/บ้าน2.jpg"  onclick="openFullscreen(this)" alt="..." />
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/บ้าน3.jpg"  onclick="openFullscreen(this) "alt="..." />
+
+           
+
+
+
+
+</div>
+
+ <div class="closingfull screen">
+                <!-- slider ปิดภาพเต็ม -->
+           <div id="fullscreenViewer" onclick="closeFullscreen()">
+                <img id="fullscreenImage">
+    <!-- slider ปิดภาพเต็ม -->
+ </div>
+                            
+                          </div>
+                           <button class="btn-new prev" onclick="moveSlide(-1, 'slidernew3', 'index3')">❮</button>
+                            <button class="btn-new next" onclick="moveSlide(1, 'slidernew3', 'index3')">❯</button>
+
+                    </div>
+                    <!-- slider 3 -->
+                   
                     <div class="product-item-description d-flex me-auto">
                         <div class="bg-faded p-5 rounded"><p class="mb-0">ผลงานล่าสุดจากทีม FFC Design กับบ้านพักอาศัย 2 ชั้น ดีไซน์สวย ฟังก์ชันครบ เหมาะกับครอบครัวขนาดกลางถึงใหญ่
 ออกแบบและสร้างตามความต้องการของเจ้าของบ้าน พร้อมดูแลตั้งแต่เริ่มต้นจนส่งมอบงาน

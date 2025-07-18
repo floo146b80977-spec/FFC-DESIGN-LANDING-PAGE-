@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .slider-container {
+      width: 600px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slider img {
+      width: 600px;
+      height: 300px;
+    }
+
+    .btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+  </style>
+</head>
+<body>
+
+<div class="slider-container">
+  <div class="slider" id="slider">
+    <img src="https://via.placeholder.com/600x300?text=1">
+    <img src="https://via.placeholder.com/600x300?text=2">
+    <img src="https://via.placeholder.com/600x300?text=3">
+  </div>
+  <button class="btn prev" onclick="moveSlide(-1)">❮</button>
+  <button class="btn next" onclick="moveSlide(1)">❯</button>
+</div>
+
+<script>
+  let index = 0;
+  function moveSlide(step) {
+    const slider = document.getElementById('slider');
+    const total = slider.children.length;
+    index = (index + step + total) % total;
+    slider.style.transform = `translateX(-${index * 600}px)`;
+  }
+</script>
+
+</body>
+</html>

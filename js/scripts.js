@@ -12,23 +12,26 @@ window.addEventListener('DOMContentLoaded', event => {
 
 // js slider 1
 let index1 = 0;
-  let index2 = 0;
-  let index3 = 0;
+let index2 = 0;
+let index3 = 0;
 
-  function moveSlide(step, sliderId, indexVarName) {
-    const slider = document.getElementById(sliderId);
-    const total = slider.children.length;
-    if (indexVarName === 'index1') {
-      index1 = (index1 + step + total) % total;
-      slider.style.transform = `translateX(-${index1 * 1024}px)`;
-    } else if (indexVarName === 'index2') {
-      index2 = (index2 + step + total) % total;
-      slider.style.transform = `translateX(-${index2 * 1024}px)`;
-    } else if ( indexVarName == 'index3') { 
-          index3 = (index3 + step + total) % total;
-      slider.style.transform = `translateX(-${index3 * 1024}px)`;
-    }
+function moveSlide(step, sliderId, indexVarName) {
+  const slider = document.getElementById(sliderId);
+  const container = slider.parentElement;
+  const containerWidth = container.offsetWidth;
+  const total = slider.children.length;
+
+  if (indexVarName === 'index1') {
+    index1 = (index1 + step + total) % total;
+    slider.style.transform = `translateX(-${index1 * containerWidth}px)`;
+  } else if (indexVarName === 'index2') {
+    index2 = (index2 + step + total) % total;
+    slider.style.transform = `translateX(-${index2 * containerWidth}px)`;
+  } else if (indexVarName === 'index3') {
+    index3 = (index3 + step + total) % total;
+    slider.style.transform = `translateX(-${index3 * containerWidth}px)`;
   }
+}
 
 
 
